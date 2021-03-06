@@ -1,0 +1,15 @@
+<div *ngIf="product" class="cart-item" style="margin-top:5px">
+  <p>{{ product.name }}</p>
+  <p>{{ product.price | currency:'￥' }}</p>
+
+  <button
+    (click)="addToCart(product)"
+    style="height: 46px;
+    line-height: 16px;
+    padding: 0 26px;
+    font-size: 14px;
+    font-family: 'microsoft yahei';width:250px;margin-left:5px;background:#66f;color:#fff"
+  >
+    加入购物车
+  </button>
+</div>

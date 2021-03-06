@@ -1,0 +1,9 @@
+<span *ngIf="product.price > 6000">
+  <button
+    class="badge badge-default"
+    (click)="notify.emit()"
+    style="margin-right:5px"
+  >
+    预售
+  </button>
+</span>

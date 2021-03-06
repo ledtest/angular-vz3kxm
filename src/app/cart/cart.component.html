@@ -1,0 +1,22 @@
+<div *ngIf="items.length > 0; else elseBlock">
+  <div class="cart-item" *ngFor="let item of items" style="margin-top:5px">
+    <span>{{ item.name }}</span>
+    <span>{{ item.price | currency:'￥' }}</span>
+  </div>
+
+  <button
+    (click)="addToCart(product)"
+    style="height: 46px;
+    line-height: 16px;
+    padding: 0 26px;
+    font-size: 18px;
+    font-family: 'microsoft yahei';margin-left:5px;background:red;color:#fff;float:right"
+  >
+    去结算
+  </button>
+</div>
+<ng-template #elseBlock>
+  <div class="cart-item" style="margin-top:5px">
+    <strong style="color:#f88">购物车里空空如也~</strong>
+  </div>
+</ng-template>

@@ -1,0 +1,40 @@
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at https://angular.io/license
+-->
+
+<section class="product-section" reltext-center mt-100 mb-70>
+  <div class="container">
+    <div class="row">
+      <div
+        class="col-lg-4 col-md-6"
+        *ngFor="let product of products;index as productId"
+      >
+        <div class="single-service-box style-three">
+          <p>
+            <a
+              [title]="product.name + ' 详情'"
+              [routerLink]="['/products',productId]"
+              style="text-decoration:none;color:#555"
+            >
+              {{ product.name }}
+            </a>
+          </p>
+          <img [src]="product.photo" />
+          <h3 *ngIf="product.description" style="color:red">
+            ￥{{ product.price }}
+          </h3>
+          <div>
+            <app-product-alerts [product]="product" (notify)="onNotify()">
+            </app-product-alerts>
+
+            <button class="badge badge-success" (click)="share()">
+              分享
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
